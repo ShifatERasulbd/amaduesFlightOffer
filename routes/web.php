@@ -10,3 +10,4 @@ Route::get('/flights', [FlightController::class, 'showForm'])->name('flights.for
 Route::post('/flights/search', [FlightController::class, 'search'])->name('flights.search');
 Route::post('/flights/confirm', [FlightController::class, 'confirm'])->name('flights.confirm');
 
+

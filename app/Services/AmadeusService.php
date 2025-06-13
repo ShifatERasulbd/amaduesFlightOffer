@@ -17,17 +17,17 @@ class AmadeusService
     }
 
       public function searchFlights($params)
-    {
-        $response = $this->amadeus->getShopping()->getFlightOffers()->get([
-            'originLocationCode' => $params['origin'],
-            'destinationLocationCode' => $params['destination'],
-            'departureDate' => $params['date'],
-            'adults' => $params['adults'],
+        {
+        $response = $amadeus->getShopping()->getFlightOffers()->get([
+            'originLocationCode' => 'DAC', // example: Dhaka
+            'destinationLocationCode' => 'DXB', // example: Dubai
+            'departureDate' => '2025-06-20',
+            'adults' => 1,
             'nonStop' => 'false',
-            'max' => '10',
+            'max' => 250 // MAXIMUM allowed
         ]);
 
-        return $response;  // return array directly
-    }
+            return $response;  // return array directly
+        }
 
 }
